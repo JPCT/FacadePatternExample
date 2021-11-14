@@ -19,26 +19,30 @@ public class Student {
     @ManyToMany
     @JoinTable(
             name = "endedCourse_Student",
-            joinColumns = @JoinColumn(name = "studenId"),
+            joinColumns = @JoinColumn(name = "studentId"),
             inverseJoinColumns = @JoinColumn(name = "courseId"))
     private Set<Course> endedCourses;
 
     @ManyToMany
     @JoinTable(
             name = "actuallyCourse_Student",
-            joinColumns = @JoinColumn(name = "studenId"),
+            joinColumns = @JoinColumn(name = "studentId"),
             inverseJoinColumns = @JoinColumn(name = "courseId"))
     private Set<Course> actuallyCourses;
+
+    @Column(nullable = false)
+    private int maxNumberOfCredits;
 
     public Student() {
     }
 
-    public Student(Long id, String name, String email, Set<Course> endedCourses, Set<Course> actuallyCourses) {
+    public Student(Long id, String name, String email, Set<Course> endedCourses, Set<Course> actuallyCourses, int maxNumberOfCredits) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.endedCourses = endedCourses;
         this.actuallyCourses = actuallyCourses;
+        this.maxNumberOfCredits = maxNumberOfCredits;
     }
 
     public Long getId() {
@@ -79,5 +83,13 @@ public class Student {
 
     public void setActuallyCourses(Set<Course> actuallyCourses) {
         this.actuallyCourses = actuallyCourses;
+    }
+
+    public int getMaxNumberOfCredits() {
+        return maxNumberOfCredits;
+    }
+
+    public void setMaxNumberOfCredits(int maxNumberOfCredits) {
+        this.maxNumberOfCredits = maxNumberOfCredits;
     }
 }
