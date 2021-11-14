@@ -30,4 +30,13 @@ public class CourseController {
     ResponseEntity<Course> newCourse(@RequestBody Course newCourse){
         return new ResponseEntity<>(courseService.save(newCourse), HttpStatus.CREATED);
     }
+
+    @GetMapping("/getstudents")
+    ResponseEntity<String> getStudents(@RequestParam(value = "id") Long id){
+        int studentsInCourse = courseService.getStudentsInCourse(id);
+        if (studentsInCourse == -1){
+            return new ResponseEntity<>(String.valueOf(studentsInCourse), HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(String.valueOf(studentsInCourse), HttpStatus.OK);
+    }
 }
