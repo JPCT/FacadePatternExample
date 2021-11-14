@@ -71,4 +71,15 @@ public class StudentController {
         Boolean validate = studentService.isCoursing(courseId,studentId);
         return new ResponseEntity<>(validate, HttpStatus.OK);
     }
+
+    @GetMapping("/couldinscribe")
+    ResponseEntity<Boolean> couldInscribe(@RequestBody Map<String, String> json){
+        Long studentId = Long.parseLong(json.get("studentId"));
+        Long courseId = Long.parseLong(json.get("courseId"));
+        Boolean validate = studentService.validateIfAvailableCreditsToInscribe(courseId,studentId);
+        if (validate == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(validate, HttpStatus.OK);
+    }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
-public class CourseService {
+public class CourseService implements ICourseService{
     private CourseRepository courseRepository;
     private StudentRepository studentRepository;
 
@@ -19,10 +19,12 @@ public class CourseService {
         this.studentRepository = studentRepository;
     }
 
+    @Override
     public Course save(Course newCourse){
         return courseRepository.save(newCourse);
     }
 
+    @Override
     public Course getCourseById(Long id){
         try{
             return courseRepository.findById(id).get();
@@ -31,6 +33,7 @@ public class CourseService {
         }
     }
 
+    @Override
     public int getStudentsInCourse(Long id){
         try{
             courseRepository.findById(id).get();
@@ -41,8 +44,15 @@ public class CourseService {
         }
     }
 
+    @Override
     public Boolean couldInscribe(Long id){
         Course course = getCourseById(id);
         return getStudentsInCourse(id) + 1 <= course.getMaxCapacity();
+    }
+
+    @Override
+    public Boolean validateIfExistsCourse(Long id){
+        Course course = getCourseById(id);
+        return course != null;
     }
 }

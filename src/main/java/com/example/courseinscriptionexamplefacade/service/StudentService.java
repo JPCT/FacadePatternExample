@@ -6,13 +6,10 @@ import com.example.courseinscriptionexamplefacade.repository.CourseRepository;
 import com.example.courseinscriptionexamplefacade.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 
 @Service
-public class StudentService {
+public class StudentService implements IStudentService{
     private StudentRepository studentRepository;
     private CourseRepository courseRepository;
 
@@ -21,10 +18,12 @@ public class StudentService {
         this.courseRepository = courseRepository;
     }
 
+    @Override
     public Student save(Student newStudent){
         return studentRepository.save(newStudent);
     }
 
+    @Override
     public Student getUserById(Long id){
         try{
             return studentRepository.findById(id).get();
@@ -33,6 +32,7 @@ public class StudentService {
         }
     }
 
+    @Override
     public Boolean validateToHaveCoursed(Long courseId, Long studentId){
         try {
             Student student = studentRepository.findEndedCoursesById(courseId).get();
@@ -45,15 +45,21 @@ public class StudentService {
         }
     }
 
+    @Override
     public Boolean validateToHaveSeenPreCondition(Long courseId, Long studentId){
         try{
             Course course = courseRepository.findById(courseId).get();
-            return validateToHaveCoursed(course.getPreConditionCourseId(), studentId);
+            if (course.getPreConditionCourseId() != null) {
+                return validateToHaveCoursed(course.getPreConditionCourseId(), studentId);
+            }else{
+                return true;
+            }
         }catch (NoSuchElementException e){
             return null;
         }
     }
 
+    @Override
     public Boolean validateSchedule(Long courseId, Long studentId){
         try{
             Course course = courseRepository.findById(courseId).get();
@@ -78,12 +84,58 @@ public class StudentService {
 
     public Boolean isCoursing(Long courseId, Long studentId){
         try{
-            Student student = studentRepository.findById(studentId).get();
+            Student student = getUserById(studentId);
             List<Course> courseList = new ArrayList<>(student.getActuallyCourses());
             Course course = courseList.stream().filter(x -> Objects.equals(x.getId(), courseId)).findAny().orElse(null);
             return course != null;
         }catch (NoSuchElementException e){
             return null;
         }
+    }
+
+    @Override
+    public int getNumOfCreditsCoursing(Long studentId){
+        Student student = getUserById(studentId);
+        List<Course> courseList = new ArrayList<>(student.getActuallyCourses());
+        int credits = 0;
+        for (Course course : courseList){
+            credits += course.getNumberOfCredits();
+        }
+        return credits;
+    }
+
+    @Override
+    public Boolean validateIfAvailableCreditsToInscribe(Long studentId, Long courseId){
+        try{
+            Course course = courseRepository.findById(courseId).get();
+            Student student = getUserById(studentId);
+            if (student == null){
+                return null;
+            }
+            return (getNumOfCreditsCoursing(studentId) + course.getNumberOfCredits()) <= student.getMaxNumberOfCredits();
+        }catch (NoSuchElementException e){
+            return null;
+        }
+    }
+
+    @Override
+    public Boolean createActuallyCoursingRegister(Long studentId, Long courseId){
+        try{
+            Student student = getUserById(studentId);
+            Set<Course> courseSet = student.getActuallyCourses();
+            Course course = courseRepository.findById(courseId).get();
+            courseSet.add(course);
+            student.setActuallyCourses(courseSet);
+            studentRepository.save(student);
+            return true;
+        }catch (NoSuchElementException e){
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean validateIfExistsStudent(Long id){
+        Student student = getUserById(id);
+        return student != null;
     }
 }
