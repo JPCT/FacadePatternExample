@@ -74,6 +74,9 @@ public class StudentService implements IStudentService{
     private Boolean checkScheduleMatch(Course courseToMatch, List<Course> courseList){
         for (String dayCourseToMatch : courseToMatch.getSchedule().keySet()){
             for (Course course : courseList){
+                if (course.getSchedule().get(dayCourseToMatch) == null || courseToMatch.getSchedule().get(dayCourseToMatch) == null){
+                    return true;
+                }
                 if (course.getSchedule().get(dayCourseToMatch).equals(courseToMatch.getSchedule().get(dayCourseToMatch))){
                     return false;
                 }

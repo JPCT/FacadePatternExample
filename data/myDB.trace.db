@@ -1,4 +1,4 @@
-2021-11-14 12:28:38 jdbc[13]: exception
+2021-11-23 08:01:23 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO [[*]STUDENT] (NAME,EMAIL,MAX_NUMBER_OF_CREDITS)
 VALUES
   ('Yuri Love','congue@icloud.com',20),
@@ -155,170 +155,19 @@ VALUES
   ('Kenyon Powers','eget.magna.suspendisse@protonmail.couk',21),
   ('Xena Mcbride','consectetuer.ipsum@protonmail.couk',20),
   ('Theodore Robbins','nullam.lobortis.quam@outlook.net',20) [42001-200]
-2021-11-14 12:28:51 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO [[*]STUDENT] (NAME,EMAIL,MAX_NUMBER_OF_CREDITS)
-VALUES
-  ('Yuri Love','congue@icloud.com',20),
-  ('Griffin Cherry','mi.eleifend.egestas@aol.net',19),
-  ('Reuben Mcclain','eget.metus.in@aol.edu',21),
-  ('Alfreda Harrington','in.magna@hotmail.org',19),
-  ('Valentine O''donnell','senectus.et@protonmail.com',20),
-  ('Troy Yates','posuere@outlook.edu',19),
-  ('Barrett Barron','pharetra.sed@icloud.com',21),
-  ('Hyatt Clemons','neque.sed.eget@aol.ca',21),
-  ('Stone Haney','accumsan.neque.et@aol.net',20),
-  ('Kato Hudson','sapien.nunc.pulvinar@google.ca',20),
-  ('Philip Underwood','nisi.a@google.com',20),
-  ('Dora Velasquez','egestas.rhoncus.proin@yahoo.net',20),
-  ('Haley Mann','feugiat.sed@hotmail.edu',20),
-  ('Allen Anthony','libero.proin.sed@hotmail.com',19),
-  ('Jael Reid','augue.eu.tempor@hotmail.ca',20),
-  ('Aurelia Sanford','neque.sed@aol.couk',20),
-  ('Dustin Lindsey','eu.placerat@google.ca',20),
-  ('Phelan Irwin','hendrerit.consectetuer.cursus@yahoo.ca',20),
-  ('Aaron Barton','sed.molestie@google.edu',21),
-  ('Hiram Pennington','magna.a@icloud.edu',20),
-  ('Xandra Booth','accumsan@yahoo.org',20),
-  ('Irene Ortega','arcu.sed@yahoo.edu',19),
-  ('Vaughan Cote','molestie@hotmail.couk',20),
-  ('Kirk Simon','suscipit@hotmail.ca',19),
-  ('Veronica Berger','arcu.vel.quam@outlook.ca',19),
-  ('Noel Arnold','cras@outlook.couk',21),
-  ('Colin Sawyer','arcu.aliquam@aol.org',20),
-  ('TaShya Mcdowell','faucibus.leo@icloud.net',20),
-  ('Rooney Benton','blandit@google.com',20),
-  ('Signe Kemp','sed.dui@aol.org',21),
-  ('Lucian Herring','suspendisse.sagittis.nullam@icloud.edu',21),
-  ('Constance Cunningham','cum@yahoo.couk',19),
-  ('Grace Thompson','lacinia@yahoo.com',19),
-  ('Kyra Vasquez','mauris.sapien.cursus@aol.org',20),
-  ('Phillip Valenzuela','laoreet.libero@protonmail.ca',20),
-  ('Flavia Higgins','est.ac.mattis@google.ca',19),
-  ('Tyrone Bradshaw','ultrices.vivamus@hotmail.ca',20),
-  ('Daniel Rodriquez','nibh@aol.org',20),
-  ('Zeus Gay','nunc@yahoo.com',21),
-  ('Venus Henson','penatibus.et@aol.net',20),
-  ('Galena Peters','aliquam.gravida@aol.com',21),
-  ('Nissim Davidson','non.dapibus@icloud.edu',19),
-  ('Shannon Avery','lacinia.mattis@icloud.couk',21),
-  ('Sade Haney','pede.sagittis@google.com',20),
-  ('Willa Salinas','aliquet.nec.imperdiet@outlook.net',20),
-  ('Allen Atkinson','sed.dui.fusce@yahoo.net',20),
-  ('Devin Meyer','amet.luctus@hotmail.couk',20),
-  ('Kenyon Powers','eget.magna.suspendisse@protonmail.couk',21),
-  ('Xena Mcbride','consectetuer.ipsum@protonmail.couk',20),
-  ('Theodore Robbins','nullam.lobortis.quam@outlook.net',20)"; se esperaba "identifier"
-Syntax error in SQL statement "INSERT INTO [[*]STUDENT] (NAME,EMAIL,MAX_NUMBER_OF_CREDITS)
-VALUES
-  ('Yuri Love','congue@icloud.com',20),
-  ('Griffin Cherry','mi.eleifend.egestas@aol.net',19),
-  ('Reuben Mcclain','eget.metus.in@aol.edu',21),
-  ('Alfreda Harrington','in.magna@hotmail.org',19),
-  ('Valentine O''donnell','senectus.et@protonmail.com',20),
-  ('Troy Yates','posuere@outlook.edu',19),
-  ('Barrett Barron','pharetra.sed@icloud.com',21),
-  ('Hyatt Clemons','neque.sed.eget@aol.ca',21),
-  ('Stone Haney','accumsan.neque.et@aol.net',20),
-  ('Kato Hudson','sapien.nunc.pulvinar@google.ca',20),
-  ('Philip Underwood','nisi.a@google.com',20),
-  ('Dora Velasquez','egestas.rhoncus.proin@yahoo.net',20),
-  ('Haley Mann','feugiat.sed@hotmail.edu',20),
-  ('Allen Anthony','libero.proin.sed@hotmail.com',19),
-  ('Jael Reid','augue.eu.tempor@hotmail.ca',20),
-  ('Aurelia Sanford','neque.sed@aol.couk',20),
-  ('Dustin Lindsey','eu.placerat@google.ca',20),
-  ('Phelan Irwin','hendrerit.consectetuer.cursus@yahoo.ca',20),
-  ('Aaron Barton','sed.molestie@google.edu',21),
-  ('Hiram Pennington','magna.a@icloud.edu',20),
-  ('Xandra Booth','accumsan@yahoo.org',20),
-  ('Irene Ortega','arcu.sed@yahoo.edu',19),
-  ('Vaughan Cote','molestie@hotmail.couk',20),
-  ('Kirk Simon','suscipit@hotmail.ca',19),
-  ('Veronica Berger','arcu.vel.quam@outlook.ca',19),
-  ('Noel Arnold','cras@outlook.couk',21),
-  ('Colin Sawyer','arcu.aliquam@aol.org',20),
-  ('TaShya Mcdowell','faucibus.leo@icloud.net',20),
-  ('Rooney Benton','blandit@google.com',20),
-  ('Signe Kemp','sed.dui@aol.org',21),
-  ('Lucian Herring','suspendisse.sagittis.nullam@icloud.edu',21),
-  ('Constance Cunningham','cum@yahoo.couk',19),
-  ('Grace Thompson','lacinia@yahoo.com',19),
-  ('Kyra Vasquez','mauris.sapien.cursus@aol.org',20),
-  ('Phillip Valenzuela','laoreet.libero@protonmail.ca',20),
-  ('Flavia Higgins','est.ac.mattis@google.ca',19),
-  ('Tyrone Bradshaw','ultrices.vivamus@hotmail.ca',20),
-  ('Daniel Rodriquez','nibh@aol.org',20),
-  ('Zeus Gay','nunc@yahoo.com',21),
-  ('Venus Henson','penatibus.et@aol.net',20),
-  ('Galena Peters','aliquam.gravida@aol.com',21),
-  ('Nissim Davidson','non.dapibus@icloud.edu',19),
-  ('Shannon Avery','lacinia.mattis@icloud.couk',21),
-  ('Sade Haney','pede.sagittis@google.com',20),
-  ('Willa Salinas','aliquet.nec.imperdiet@outlook.net',20),
-  ('Allen Atkinson','sed.dui.fusce@yahoo.net',20),
-  ('Devin Meyer','amet.luctus@hotmail.couk',20),
-  ('Kenyon Powers','eget.magna.suspendisse@protonmail.couk',21),
-  ('Xena Mcbride','consectetuer.ipsum@protonmail.couk',20),
-  ('Theodore Robbins','nullam.lobortis.quam@outlook.net',20)"; expected "identifier"; SQL statement:
-INSERT INTO [student] (name,email,max_Number_Of_Credits)
-VALUES
-  ('Yuri Love','congue@icloud.com',20),
-  ('Griffin Cherry','mi.eleifend.egestas@aol.net',19),
-  ('Reuben Mcclain','eget.metus.in@aol.edu',21),
-  ('Alfreda Harrington','in.magna@hotmail.org',19),
-  ('Valentine O''donnell','senectus.et@protonmail.com',20),
-  ('Troy Yates','posuere@outlook.edu',19),
-  ('Barrett Barron','pharetra.sed@icloud.com',21),
-  ('Hyatt Clemons','neque.sed.eget@aol.ca',21),
-  ('Stone Haney','accumsan.neque.et@aol.net',20),
-  ('Kato Hudson','sapien.nunc.pulvinar@google.ca',20),
-  ('Philip Underwood','nisi.a@google.com',20),
-  ('Dora Velasquez','egestas.rhoncus.proin@yahoo.net',20),
-  ('Haley Mann','feugiat.sed@hotmail.edu',20),
-  ('Allen Anthony','libero.proin.sed@hotmail.com',19),
-  ('Jael Reid','augue.eu.tempor@hotmail.ca',20),
-  ('Aurelia Sanford','neque.sed@aol.couk',20),
-  ('Dustin Lindsey','eu.placerat@google.ca',20),
-  ('Phelan Irwin','hendrerit.consectetuer.cursus@yahoo.ca',20),
-  ('Aaron Barton','sed.molestie@google.edu',21),
-  ('Hiram Pennington','magna.a@icloud.edu',20),
-  ('Xandra Booth','accumsan@yahoo.org',20),
-  ('Irene Ortega','arcu.sed@yahoo.edu',19),
-  ('Vaughan Cote','molestie@hotmail.couk',20),
-  ('Kirk Simon','suscipit@hotmail.ca',19),
-  ('Veronica Berger','arcu.vel.quam@outlook.ca',19),
-  ('Noel Arnold','cras@outlook.couk',21),
-  ('Colin Sawyer','arcu.aliquam@aol.org',20),
-  ('TaShya Mcdowell','faucibus.leo@icloud.net',20),
-  ('Rooney Benton','blandit@google.com',20),
-  ('Signe Kemp','sed.dui@aol.org',21),
-  ('Lucian Herring','suspendisse.sagittis.nullam@icloud.edu',21),
-  ('Constance Cunningham','cum@yahoo.couk',19),
-  ('Grace Thompson','lacinia@yahoo.com',19),
-  ('Kyra Vasquez','mauris.sapien.cursus@aol.org',20),
-  ('Phillip Valenzuela','laoreet.libero@protonmail.ca',20),
-  ('Flavia Higgins','est.ac.mattis@google.ca',19),
-  ('Tyrone Bradshaw','ultrices.vivamus@hotmail.ca',20),
-  ('Daniel Rodriquez','nibh@aol.org',20),
-  ('Zeus Gay','nunc@yahoo.com',21),
-  ('Venus Henson','penatibus.et@aol.net',20),
-  ('Galena Peters','aliquam.gravida@aol.com',21),
-  ('Nissim Davidson','non.dapibus@icloud.edu',19),
-  ('Shannon Avery','lacinia.mattis@icloud.couk',21),
-  ('Sade Haney','pede.sagittis@google.com',20),
-  ('Willa Salinas','aliquet.nec.imperdiet@outlook.net',20),
-  ('Allen Atkinson','sed.dui.fusce@yahoo.net',20),
-  ('Devin Meyer','amet.luctus@hotmail.couk',20),
-  ('Kenyon Powers','eget.magna.suspendisse@protonmail.couk',21),
-  ('Xena Mcbride','consectetuer.ipsum@protonmail.couk',20),
-  ('Theodore Robbins','nullam.lobortis.quam@outlook.net',20) [42001-200]
-2021-11-14 12:33:35 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO COURSE_SCHEDULE (COURSE_ID,SCHEDULE,SCHEDULE_KEY)
-VALUES
-  (5,'14:00-16:00','Monday'),[*]"; se esperaba "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
-Syntax error in SQL statement "INSERT INTO COURSE_SCHEDULE (COURSE_ID,SCHEDULE,SCHEDULE_KEY)
-VALUES
-  (5,'14:00-16:00','Monday'),[*]"; expected "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
-INSERT INTO course_schedule (course_id,schedule,schedule_key)
-VALUES
-  (5,'14:00-16:00','Monday'), [42001-200]
+2021-11-23 08:21:12 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (COURSE: ""PRE_CONDITION_COURSE_ID"" BIGINT)"
+Data conversion error converting "'' (COURSE: ""PRE_CONDITION_COURSE_ID"" BIGINT)"; SQL statement:
+UPDATE "PUBLIC"."COURSE" SET "ID"=? ,"AVAILABLE"=? ,"MAX_CAPACITY"=? ,"NAME"=? ,"NUMBER_OF_CREDITS"=? ,"PRE_CONDITION_COURSE_ID"=? ,"TEACHER_NAME"=?  WHERE "ID"=? [22018-200]
+2021-11-23 08:21:12 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (COURSE: ""PRE_CONDITION_COURSE_ID"" BIGINT)"
+Data conversion error converting "'' (COURSE: ""PRE_CONDITION_COURSE_ID"" BIGINT)"; SQL statement:
+UPDATE "PUBLIC"."COURSE" SET "ID"=? ,"AVAILABLE"=? ,"MAX_CAPACITY"=? ,"NAME"=? ,"NUMBER_OF_CREDITS"=? ,"PRE_CONDITION_COURSE_ID"=? ,"TEACHER_NAME"=?  WHERE "ID"=? [22018-200]
+2021-11-23 08:21:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (COURSE: ""PRE_CONDITION_COURSE_ID"" BIGINT)"
+Data conversion error converting "'' (COURSE: ""PRE_CONDITION_COURSE_ID"" BIGINT)"; SQL statement:
+INSERT INTO "PUBLIC"."COURSE"("ID","AVAILABLE","MAX_CAPACITY","NAME","NUMBER_OF_CREDITS","PRE_CONDITION_COURSE_ID","TEACHER_NAME")VALUES(?,?,?,?,?,?,?) [22018-200]
+2021-11-23 08:21:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (COURSE: ""PRE_CONDITION_COURSE_ID"" BIGINT)"
+Data conversion error converting "'' (COURSE: ""PRE_CONDITION_COURSE_ID"" BIGINT)"; SQL statement:
+INSERT INTO "PUBLIC"."COURSE"("ID","AVAILABLE","MAX_CAPACITY","NAME","NUMBER_OF_CREDITS","PRE_CONDITION_COURSE_ID","TEACHER_NAME")VALUES(?,?,?,?,?,?,?) [22018-200]

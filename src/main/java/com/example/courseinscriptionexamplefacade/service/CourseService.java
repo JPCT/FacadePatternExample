@@ -29,7 +29,7 @@ public class CourseService implements ICourseService{
         try{
             return courseRepository.findById(id).get();
         }catch (NoSuchElementException e){
-            return null;
+            throw e;
         }
     }
 
